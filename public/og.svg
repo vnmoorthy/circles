@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0a0f"/>
+      <stop offset="1" stop-color="#14121f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.9">
+      <stop stop-color="#7c6cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c6cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7c6cff"/>
+      <stop offset="1" stop-color="#ff8a5c"/>
+    </linearGradient>
+    <linearGradient id="meter" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#7c6cff"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g transform="translate(90,80)">
+    <rect width="54" height="54" rx="14" fill="url(#brand)"/>
+    <text x="27" y="37" font-size="26" text-anchor="middle">💬</text>
+    <text x="72" y="24" fill="#ffffff" font-size="22" font-weight="600">The Hard Conversation</text>
+    <text x="72" y="48" fill="#a99cff" font-size="15" letter-spacing="1">plan · act · observe · self-correct</text>
+  </g>
+
+  <text x="90" y="240" fill="#ffffff" font-size="66" font-weight="700">Rehearse the conversation</text>
+  <text x="90" y="316" fill="#ffffff" font-size="66" font-weight="700">you're <tspan fill="#a99cff">dreading.</tspan></text>
+
+  <text x="90" y="384" fill="#ffffff" fill-opacity="0.6" font-size="26">A self-directing agent loop that role-plays the other person,</text>
+  <text x="90" y="420" fill="#ffffff" fill-opacity="0.6" font-size="26">watches where you break, and coaches you until you're ready.</text>
+
+  <!-- readiness strip -->
+  <g transform="translate(90,470)">
+    <text x="0" y="0" fill="#ffffff" fill-opacity="0.4" font-size="15" letter-spacing="2">READINESS</text>
+    <text x="0" y="60" fill="#4ade80" font-size="52" font-weight="700" font-family="JetBrains Mono, monospace">84</text>
+    <text x="86" y="60" fill="#ffffff" fill-opacity="0.3" font-size="22">/ 100 · Ready</text>
+    <rect x="300" y="34" width="720" height="14" rx="7" fill="#ffffff" fill-opacity="0.06"/>
+    <rect x="300" y="34" width="605" height="14" rx="7" fill="url(#meter)"/>
+  </g>
+
+  <text x="1110" y="600" fill="#ffffff" fill-opacity="0.35" font-size="16" text-anchor="end">Loop Engineering Hackathon</text>
+</svg>
