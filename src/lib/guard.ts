@@ -54,7 +54,7 @@ export function redactPII(input: string): RedactionResult {
   return { text, redactions }
 }
 
-const HIGH_RISK = /\b(hiv|cancer|diagnos|suicid|abuse|assault|pregnan|divorce|custody|overdose|addict|terminal|died|death|gay|lesbian|trans|coming out)\b/i
+const HIGH_RISK = /\b(hiv|cancer|diagnos|suicid|abuse|assault|pregnan|divorce|custody|overdose|addict|terminal|died|death|gay|lesbian|trans|com(e|ing) out)\b/i
 const MED_RISK = /\b(salary|fired|laid off|money|debt|therapy|depress|anxiety|breakup|affair|cheat)\b/i
 
 /** Classify how sensitive a piece of text is, to drive UI + egress policy. */
