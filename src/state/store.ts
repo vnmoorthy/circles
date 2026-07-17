@@ -190,7 +190,7 @@ export const useStore = create<AppState>()(
       },
     }),
     {
-      name: 'thc-settings',
+      name: 'circles-settings',
       // Only persist settings — never the (sensitive) conversation itself.
       partialize: (s) => ({ settings: s.settings }),
     },

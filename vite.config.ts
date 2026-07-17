@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // GitHub Pages serves the app from /<repo>/, so the base path must match the
 // repository name in CI. Locally (dev/preview) we serve from root.
-const base = process.env.GITHUB_PAGES === 'true' ? '/the-hard-conversation/' : '/'
+const base = process.env.GITHUB_PAGES === 'true' ? '/circles/' : '/'
 
 export default defineConfig({
   base,

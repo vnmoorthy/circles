@@ -1,6 +1,6 @@
 # Sponsor integrations
 
-The Hard Conversation is designed so sponsor tools do real work, not cameo
+Circles is designed so sponsor tools do real work, not cameo
 appearances. Here's exactly where each one fits.
 
 ## AWS — Claude on Bedrock

@@ -9,7 +9,7 @@
 import type { Observation, TurnAnalysis } from '../engine/types'
 import type { AnalyzeInput } from './types'
 
-export const SYSTEM_PROMPT = `You are the engine behind "The Hard Conversation", a tool that helps a
+export const SYSTEM_PROMPT = `You are the engine behind "Circles", a tool that helps a
 person rehearse a difficult real-life conversation before they have it.
 
 You play THREE roles at once, every turn:

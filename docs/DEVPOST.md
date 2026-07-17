@@ -1,4 +1,4 @@
-# Devpost submission — The Hard Conversation
+# Devpost submission — Circles
 
 Copy-paste answers for the Devpost form. Everything here is true to what's in
 the repo and the live demo.
@@ -6,17 +6,17 @@ the repo and the live demo.
 ---
 
 ## Project name
-The Hard Conversation
+Circles
 
 ## Tagline / elevator pitch
 *(≤ 200 chars)*
 > A self-directing agent loop that rehearses the conversation you're dreading — it role-plays the other person, watches where you break, and coaches you until it decides you're ready.
 
 ## Live demo
-https://vnmoorthy.github.io/the-hard-conversation/
+https://vnmoorthy.github.io/circles/
 
 ## Repository
-https://github.com/vnmoorthy/the-hard-conversation
+https://github.com/vnmoorthy/circles
 
 ---
 
@@ -68,5 +68,5 @@ That "self-correcting" is the hard part to make *believable*. It's easy to claim
 `react` · `typescript` · `vite` · `tailwindcss` · `framer-motion` · `zustand` · `claude` · `aws-bedrock` · `pomerium` · `github-actions` · `github-pages` · `vitest`
 
 ## Try it out
-- Live demo: https://vnmoorthy.github.io/the-hard-conversation/
-- Source: https://github.com/vnmoorthy/the-hard-conversation
+- Live demo: https://vnmoorthy.github.io/circles/
+- Source: https://github.com/vnmoorthy/circles

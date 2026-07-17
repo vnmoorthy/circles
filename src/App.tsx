@@ -39,12 +39,16 @@ export default function App() {
             className="flex items-center gap-2 text-left"
             title="Back to start"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-warm text-sm">
-              💬
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-warm">
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden>
+                <circle cx="12" cy="12" r="8.5" stroke="white" strokeWidth="1.6" opacity="0.55" />
+                <circle cx="12" cy="12" r="5" stroke="white" strokeWidth="1.6" opacity="0.8" />
+                <circle cx="12" cy="12" r="1.9" fill="white" />
+              </svg>
             </span>
             <div>
               <div className="text-sm font-semibold leading-tight text-white">
-                The Hard Conversation
+                Circles
               </div>
               <div className="text-[11px] leading-tight text-white/40">
                 plan · act · observe · self-correct

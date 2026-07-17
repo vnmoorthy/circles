@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Domain types for The Hard Conversation loop.
+// Domain types for Circles loop.
 //
 // The whole product is a single self-directing agent loop:
 //

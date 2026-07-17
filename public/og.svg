@@ -22,8 +22,10 @@
 
   <g transform="translate(90,80)">
     <rect width="54" height="54" rx="14" fill="url(#brand)"/>
-    <text x="27" y="37" font-size="26" text-anchor="middle">💬</text>
-    <text x="72" y="24" fill="#ffffff" font-size="22" font-weight="600">The Hard Conversation</text>
+    <circle cx="27" cy="27" r="17" fill="none" stroke="#ffffff" stroke-width="2.6" opacity="0.55"/>
+    <circle cx="27" cy="27" r="10.5" fill="none" stroke="#ffffff" stroke-width="2.6" opacity="0.85"/>
+    <circle cx="27" cy="27" r="4" fill="#ffffff"/>
+    <text x="72" y="24" fill="#ffffff" font-size="22" font-weight="600">Circles</text>
     <text x="72" y="48" fill="#a99cff" font-size="15" letter-spacing="1">plan · act · observe · self-correct</text>
   </g>
 

@@ -1,11 +1,11 @@
 {
-  "name": "the-hard-conversation",
+  "name": "circles",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "description": "A self-directing agent loop that rehearses the conversations you're dreading — plan, act, observe, self-correct.",
   "license": "MIT",
-  "homepage": "https://vnmoorthy.github.io/the-hard-conversation/",
+  "homepage": "https://vnmoorthy.github.io/circles/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

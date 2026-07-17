@@ -1,21 +1,21 @@
 <div align="center">
 
-<img src="docs/hero.svg" alt="The Hard Conversation" width="100%" />
+<img src="docs/hero.svg" alt="Circles" width="100%" />
 
-# The Hard Conversation
+# Circles
 
 **Rehearse the talk you're dreading — with an agent that role-plays the other person, watches where you break, and coaches you until you're ready.**
 
 A self-directing agent loop: **plan → act → observe → self-correct**, running until it decides *you're* ready.
 
-[![CI](https://github.com/vnmoorthy/the-hard-conversation/actions/workflows/ci.yml/badge.svg)](https://github.com/vnmoorthy/the-hard-conversation/actions/workflows/ci.yml)
-[![Deploy](https://github.com/vnmoorthy/the-hard-conversation/actions/workflows/deploy.yml/badge.svg)](https://github.com/vnmoorthy/the-hard-conversation/actions/workflows/deploy.yml)
-[![Live demo](https://img.shields.io/badge/live-demo-7c6cff)](https://vnmoorthy.github.io/the-hard-conversation/)
+[![CI](https://github.com/vnmoorthy/circles/actions/workflows/ci.yml/badge.svg)](https://github.com/vnmoorthy/circles/actions/workflows/ci.yml)
+[![Deploy](https://github.com/vnmoorthy/circles/actions/workflows/deploy.yml/badge.svg)](https://github.com/vnmoorthy/circles/actions/workflows/deploy.yml)
+[![Live demo](https://img.shields.io/badge/live-demo-7c6cff)](https://vnmoorthy.github.io/circles/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-4ade80.svg)](LICENSE)
 [![Built with](https://img.shields.io/badge/Vite%20%2B%20React%20%2B%20TS-1a1a25)](#tech)
 [![Claude](https://img.shields.io/badge/model-Claude%20%C2%B7%20Bedrock-ff8a5c)](docs/SPONSORS.md)
 
-### [▶ Try the live demo](https://vnmoorthy.github.io/the-hard-conversation/) &nbsp;·&nbsp; [The loop, explained](docs/LOOP.md) &nbsp;·&nbsp; [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp; [Sponsors](docs/SPONSORS.md)
+### [▶ Try the live demo](https://vnmoorthy.github.io/circles/) &nbsp;·&nbsp; [The loop, explained](docs/LOOP.md) &nbsp;·&nbsp; [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp; [Sponsors](docs/SPONSORS.md)
 
 </div>
 
@@ -25,7 +25,7 @@ A self-directing agent loop: **plan → act → observe → self-correct**, runn
 
 Everyone has a conversation they keep not having. Coming out to a parent. Quitting a job you're loyal to. Telling your kid you're sick. Ending something with someone you still love.
 
-You rehearse it in the shower and it falls apart the moment the other person reacts in a way you didn't script. **The Hard Conversation** gives you the reps: an agent plays the other person — defensive, tearful, guilt-tripping, whatever they'll actually be — and after every line you say, a second pass tells you *exactly* where it landed and how to say it better. It loops until it's confident you can walk in.
+You rehearse it in the shower and it falls apart the moment the other person reacts in a way you didn't script. **Circles** gives you the reps: an agent plays the other person — defensive, tearful, guilt-tripping, whatever they'll actually be — and after every line you say, a second pass tells you *exactly* where it landed and how to say it better. It loops until it's confident you can walk in.
 
 It is, quite literally, a build-cycle loop pointed at the hardest thing to build: the courage to say the thing.
 
@@ -69,8 +69,8 @@ Details and deployment notes: **[docs/SPONSORS.md](docs/SPONSORS.md)**.
 ## Quickstart
 
 ```bash
-git clone https://github.com/vnmoorthy/the-hard-conversation.git
-cd the-hard-conversation
+git clone https://github.com/vnmoorthy/circles.git
+cd circles
 npm install
 npm run dev          # http://localhost:5173
 ```

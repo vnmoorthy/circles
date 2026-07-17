@@ -28,8 +28,10 @@
   <!-- Header -->
   <g transform="translate(48,36)">
     <rect width="34" height="34" rx="9" fill="url(#brand)"/>
-    <text x="17" y="23" font-size="16" text-anchor="middle">💬</text>
-    <text x="46" y="15" fill="#ffffff" font-size="16" font-weight="600">The Hard Conversation</text>
+    <circle cx="17" cy="17" r="11" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.55"/>
+    <circle cx="17" cy="17" r="6.5" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.85"/>
+    <circle cx="17" cy="17" r="2.4" fill="#ffffff"/>
+    <text x="46" y="15" fill="#ffffff" font-size="16" font-weight="600">Circles</text>
     <text x="46" y="32" fill="#ffffff" opacity="0.4" font-size="12">plan · act · observe · self-correct</text>
   </g>
   <text x="1152" y="58" fill="#a99cff" font-size="12" text-anchor="end" font-family="JetBrains Mono, monospace">demo engine · no key</text>
