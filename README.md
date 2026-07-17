@@ -15,7 +15,7 @@ A self-directing agent loop: **plan → act → observe → self-correct**, runn
 [![Built with](https://img.shields.io/badge/Vite%20%2B%20React%20%2B%20TS-1a1a25)](#tech)
 [![Claude](https://img.shields.io/badge/model-Claude%20%C2%B7%20Bedrock-ff8a5c)](docs/SPONSORS.md)
 
-### [▶ Try the live demo](https://vnmoorthy.github.io/circles/) &nbsp;·&nbsp; [The loop, explained](docs/LOOP.md) &nbsp;·&nbsp; [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp; [Sponsors](docs/SPONSORS.md)
+### [▶ Try the live demo](https://vnmoorthy.github.io/circles/) &nbsp;·&nbsp; [📊 Pitch deck](https://vnmoorthy.github.io/circles/pitch.html) &nbsp;·&nbsp; [The loop](docs/LOOP.md) &nbsp;·&nbsp; [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp; [Sponsors](docs/SPONSORS.md)
 
 </div>
 

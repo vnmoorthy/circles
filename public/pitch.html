@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Circles — Pitch Deck</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0a0a0f; --ink2:#12121a; --ink3:#1a1a25;
+    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+    --accent:#7c6cff; --accent2:#ff8a5c; --calm:#4ade80; --tense:#fb7185;
+    --text:#edecf5; --muted:rgba(255,255,255,.55); --faint:rgba(255,255,255,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+  body{
+    font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
+    background:var(--ink);color:var(--text);-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .grad{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .slide{
+    scroll-snap-align:start;min-height:100vh;width:100%;position:relative;
+    padding:7vh 8vw;display:flex;flex-direction:column;justify-content:center;
+    border-bottom:1px solid var(--line);overflow:hidden;
+  }
+  .slide::before{content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(1100px 560px at 82% -8%, rgba(124,108,255,.16), transparent 60%),
+      radial-gradient(900px 480px at -6% 108%, rgba(255,138,92,.10), transparent 55%),
+      var(--ink);
+  }
+  .slide::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+    background-size:34px 34px;mask-image:radial-gradient(circle at 50% 40%,black,transparent 78%);
+  }
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:20px}
+  h1{font-size:clamp(34px,6vw,76px);line-height:1.02;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(28px,4.4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-.02em}
+  .lead{font-size:clamp(16px,1.7vw,21px);color:var(--muted);max-width:52ch;line-height:1.55;margin-top:22px}
+  .cards{display:grid;gap:16px;margin-top:38px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:rgba(18,18,26,.66);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(12px)}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+  .card p{font-size:14px;color:var(--muted);line-height:1.5}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .kpi{font-size:clamp(30px,4vw,46px);font-weight:800}
+  .imgwrap{margin-top:20px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--ink2);box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+  .imgwrap img{display:block;width:100%}
+  .brandmark{width:56px;height:56px;border-radius:15px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;flex:none}
+  .loopwrap{display:flex;align-items:stretch;gap:10px;margin-top:38px;flex-wrap:wrap}
+  .phase{flex:1;min-width:150px;background:rgba(18,18,26,.66);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .phase .n{font-size:12px;color:var(--faint)}
+  .phase h3{font-size:19px;margin:6px 0}
+  .phase p{font-size:13px;color:var(--muted);line-height:1.45}
+  .phase.hot{border-color:rgba(124,108,255,.5);background:rgba(124,108,255,.08)}
+  .arrowdot{align-self:center;color:var(--faint);font-size:22px}
+  table{width:100%;border-collapse:collapse;margin-top:26px;font-size:15px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  th{color:var(--faint);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  td .mono{color:#c9c4ff}
+  .formula{margin-top:26px;background:rgba(15,14,26,.8);border:1px solid rgba(124,108,255,.3);border-radius:16px;padding:20px 24px;font-size:16px;line-height:1.9}
+  .li{display:flex;gap:12px;align-items:flex-start;font-size:17px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .li .d{margin-top:9px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));flex:none}
+  .big{font-size:clamp(22px,2.6vw,30px);font-weight:600;line-height:1.35;max-width:24ch}
+  .foot{position:absolute;left:8vw;bottom:4vh;font-size:12px;color:var(--faint)}
+  .num{position:fixed;right:22px;bottom:18px;font-size:12px;color:var(--faint);z-index:20}
+  .num b{color:var(--text)}
+  .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:30;width:0;transition:width .25s ease}
+  .nav{position:fixed;right:22px;bottom:44px;display:flex;gap:8px;z-index:20}
+  .nav button{width:34px;height:34px;border-radius:10px;border:1px solid var(--line2);background:rgba(18,18,26,.7);color:var(--text);cursor:pointer;font-size:15px;backdrop-filter:blur(8px)}
+  .nav button:hover{background:rgba(124,108,255,.25)}
+  .tag{font-size:12.5px;color:var(--calm)}
+  @media(max-width:820px){.g3,.g4,.g2{grid-template-columns:1fr 1fr}.slide{padding:9vh 7vw}}
+  @media(max-width:560px){.g3,.g4,.g2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 · COVER -->
+  <section class="slide" style="justify-content:center">
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="brandmark">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.7" opacity=".55"/>
+          <circle cx="12" cy="12" r="5.2" stroke="#fff" stroke-width="1.7" opacity=".85"/>
+          <circle cx="12" cy="12" r="2" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div style="font-size:26px;font-weight:800;letter-spacing:-.01em">Circles</div>
+        <div class="mono" style="font-size:12px;color:var(--faint)">plan · act · observe · self-correct</div>
+      </div>
+    </div>
+    <h1 style="margin-top:44px;max-width:16ch">Rehearse the conversation you're <span class="grad">dreading.</span></h1>
+    <p class="lead">A self-directing agent loop that role-plays the other person, watches where you break, and coaches you — until it decides <em>you're</em> ready.</p>
+    <div class="row">
+      <span class="chip">▶ Live demo · vnmoorthy.github.io/circles</span>
+      <span class="chip">Loop Engineering Hackathon · 2026</span>
+    </div>
+    <div class="foot">Pitch deck · 10 slides · use ← → keys</div>
+  </section>
+
+  <!-- 2 · PROBLEM -->
+  <section class="slide">
+    <div class="eyebrow">The problem</div>
+    <h2>There's a conversation you keep <span class="grad">not having.</span></h2>
+    <div class="cards g4">
+      <div class="card"><h3>🌈 Coming out</h3><p>to a parent who's never talked about anything this personal.</p></div>
+      <div class="card"><h3>🚪 Quitting</h3><p>a job you're loyal to, without getting guilt-tripped into staying.</p></div>
+      <div class="card"><h3>🫂 A diagnosis</h3><p>telling your kid you're sick — honest, but still keeping them safe.</p></div>
+      <div class="card"><h3>💔 Ending it</h3><p>with someone you still love, without cruelty or false hope.</p></div>
+    </div>
+    <p class="lead" style="margin-top:34px">You rehearse it in the shower — and it falls apart the second they react in a way you didn't script. Practice partners are expensive, awkward, and never play the part convincingly.</p>
+  </section>
+
+  <!-- 3 · SOLUTION -->
+  <section class="slide">
+    <div class="eyebrow">The solution</div>
+    <h2>Circles gives you the <span class="grad">reps.</span></h2>
+    <p class="lead">Describe the conversation. An agent becomes the other person — defensive, tearful, guilt-tripping, whatever they'll really be — and after every line you say, it tells you exactly where it landed and how to say it better.</p>
+    <div class="cards g3">
+      <div class="card"><h3>🎭 It plays them</h3><p>An in-character persona whose difficulty adapts to how you're doing — harder when you cope, gentler when you flounder.</p></div>
+      <div class="card"><h3>👁 It watches you</h3><p>A separate pass scores your clarity, empathy, and heat — and catches the moment you escalate or freeze.</p></div>
+      <div class="card"><h3>✅ It decides you're ready</h3><p>A Readiness score climbs across rounds; the loop self-terminates when you can actually walk in.</p></div>
+    </div>
+  </section>
+
+  <!-- 4 · THE LOOP -->
+  <section class="slide">
+    <div class="eyebrow">Why it fits the theme</div>
+    <h2>The loop <span class="grad">is</span> the product.</h2>
+    <p class="lead">Not a chatbot with a loop bolted on. Plan → act → observe → self-correct runs every round, and it's on screen the whole time.</p>
+    <div class="loopwrap">
+      <div class="phase"><div class="n mono">01</div><h3>🧠 Plan</h3><p>model the other person + a difficulty setpoint from your spec.</p></div>
+      <div class="arrowdot">→</div>
+      <div class="phase"><div class="n mono">02</div><h3>💬 Act</h3><p>you speak; the persona replies in character.</p></div>
+      <div class="arrowdot">→</div>
+      <div class="phase hot"><div class="n mono">03</div><h3>👁 Observe</h3><p>score <em>your</em> message: clarity, empathy, heat, escalate/freeze.</p></div>
+      <div class="arrowdot">→</div>
+      <div class="phase"><div class="n mono">04</div><h3>✨ Self-correct</h3><p>adapt difficulty, coach, update readiness. ↺ repeat.</p></div>
+    </div>
+    <p class="tag" style="margin-top:26px">↺ loops until readiness ≥ 80 across 3+ rounds — a stopping point the system chooses on its own.</p>
+  </section>
+
+  <!-- 5 · PRODUCT -->
+  <section class="slide">
+    <div class="eyebrow">The product</div>
+    <h2>Legible. Live. <span class="grad">Breakable on stage.</span></h2>
+    <div class="imgwrap"><img src="hero.svg" alt="Circles product UI" /></div>
+    <div class="row">
+      <span class="chip">📈 Readiness meter climbs to the converge line</span>
+      <span class="chip">🎛 Four-phase loop timeline lights up</span>
+      <span class="chip">🔧 "Throw a wrench" — a judge makes them rage/cry, live</span>
+    </div>
+  </section>
+
+  <!-- 6 · ARCHITECTURE -->
+  <section class="slide">
+    <div class="eyebrow">Architecture</div>
+    <h2>Pure engine core, <span class="grad">swappable</span> edges.</h2>
+    <div class="imgwrap"><img src="architecture.svg" alt="Circles system architecture" /></div>
+  </section>
+
+  <!-- 7 · SELF-CORRECTION -->
+  <section class="slide">
+    <div class="eyebrow">What makes it self-directing</div>
+    <h2>The loop changes its <span class="grad">own</span> behaviour.</h2>
+    <div class="formula mono">
+      score = 0.42·clarity + 0.40·empathy + 0.18·tempScore <span style="color:var(--tense)">− 22 if escalated − 26 if froze</span>
+    </div>
+    <table>
+      <tr><th>Round score</th><th>Persona difficulty</th><th>Why</th></tr>
+      <tr><td>≥ 75</td><td><span class="mono">+9</span> harder</td><td>you're handling it → build resilience</td></tr>
+      <tr><td>40–54</td><td><span class="mono">−4</span> softer</td><td>ease off, keep you in the zone</td></tr>
+      <tr><td>&lt; 40</td><td><span class="mono">−11</span> gentle</td><td>you're floundering → scaffold, don't crush</td></tr>
+    </table>
+    <p class="lead" style="margin-top:26px">Readiness is a smoothed signal, so one great round can't declare victory. All of it is <strong>pure and unit-tested</strong> — identical on stage as in CI.</p>
+  </section>
+
+  <!-- 8 · PRIVACY + SPONSORS -->
+  <section class="slide">
+    <div class="eyebrow">Trust · sponsors</div>
+    <h2>The most private data, <span class="grad">handled right.</span></h2>
+    <p class="lead">A coming-out, a divorce, a diagnosis. So privacy is built in, not bolted on — and the sponsor tools do real work.</p>
+    <div class="cards g2">
+      <div class="card"><h3>🔒 Private by construction</h3><p>The demo engine runs fully on-device. Real calls are PII-redacted; high-risk topics can't leave without explicit consent. Conversations are never stored.</p></div>
+      <div class="card"><h3>🛡 Pomerium</h3><p>Identity-aware, policy-gated egress at the runtime boundary — mirrored by the app's <span class="mono">evaluateEgress()</span>.</p></div>
+      <div class="card"><h3>☁ AWS Bedrock</h3><p>Claude on Bedrock via a SigV4 signing proxy — a first-class provider, creds never in the browser.</p></div>
+      <div class="card"><h3>⚡ Akash</h3><p>Open, low-cost compute for the private inference proxy — no platform lock-in.</p></div>
+    </div>
+  </section>
+
+  <!-- 9 · WHY IT WINS -->
+  <section class="slide">
+    <div class="eyebrow">Why it wins the room</div>
+    <h2>On-theme, unforgettable, <span class="grad">demo-proof.</span></h2>
+    <div class="cards g2" style="margin-top:30px">
+      <div class="card"><h3>✅ Most on-theme</h3><p>The self-correction is the product, visibly, with a stopping point the loop chooses itself.</p></div>
+      <div class="card"><h3>❤️ Emotional ceiling</h3><p>Judges have parents, kids, and hard talks of their own. They'll <em>feel</em> this one.</p></div>
+      <div class="card"><h3>🔧 They break it themselves</h3><p>"Throw a wrench" hands the wow moment to the audience — no take-it-on-faith.</p></div>
+      <div class="card"><h3>🧪 Real, not vapor</h3><p>Live credential-free demo, 37 green tests, CI + auto-deploy. It actually runs.</p></div>
+    </div>
+    <div class="row" style="margin-top:30px">
+      <span class="chip"><b class="kpi" style="font-size:20px">37</b>&nbsp;tests</span>
+      <span class="chip"><b style="font-size:18px;color:var(--text)">100%</b>&nbsp;on-device demo</span>
+      <span class="chip"><b style="font-size:18px;color:var(--text)">3</b>&nbsp;model providers</span>
+      <span class="chip"><b style="font-size:18px;color:var(--text)">0</b>&nbsp;secrets to try it</span>
+    </div>
+  </section>
+
+  <!-- 10 · VISION / CLOSE -->
+  <section class="slide" style="justify-content:center">
+    <div class="eyebrow">What's next</div>
+    <h1 style="max-width:18ch">A safe circle to practice <span class="grad">the hard ones.</span></h1>
+    <div class="cards g3" style="margin-top:34px">
+      <div class="card"><h3>🎙 Voice mode</h3><p>Speak your lines; hear the persona.</p></div>
+      <div class="card"><h3>📊 Debrief</h3><p>Your patterns across every rehearsal.</p></div>
+      <div class="card"><h3>📦 Persona packs</h3><p>Shareable, self-hostable, on open compute.</p></div>
+    </div>
+    <p class="big" style="margin-top:40px">Everyone has one. <span class="grad">Circles</span> is where you get it right — before it counts.</p>
+    <div class="row">
+      <span class="chip">▶ vnmoorthy.github.io/circles</span>
+      <span class="chip">github.com/vnmoorthy/circles</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="num" id="num"><b>01</b> / 10</div>
+<div class="nav"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const numEl=document.getElementById('num');
+  const prog=document.getElementById('prog');
+  const pad=n=>String(n).padStart(2,'0');
+  function current(){
+    const y=window.scrollY||document.documentElement.scrollTop;let i=0,min=Infinity;
+    slides.forEach((s,idx)=>{const d=Math.abs(s.offsetTop-y);if(d<min){min=d;i=idx}});
+    return i;
+  }
+  function update(){
+    const i=current();
+    numEl.innerHTML='<b>'+pad(i+1)+'</b> / '+pad(slides.length);
+    prog.style.width=((i)/(slides.length-1)*100)+'%';
+  }
+  function go(i){i=Math.max(0,Math.min(slides.length-1,i));window.scrollTo({top:slides[i].offsetTop,behavior:'smooth'})}
+  document.getElementById('next').onclick=()=>go(current()+1);
+  document.getElementById('prev').onclick=()=>go(current()-1);
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(current()+1)}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(current()-1)}
+    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
+  });
+  addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
+  update();
+</script>
+</body>
+</html>

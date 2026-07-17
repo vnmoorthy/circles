@@ -4,6 +4,10 @@ A single-page app with a **pure loop engine** at its center and **swappable
 model providers** at its edge. No backend is required for the demo; a tiny proxy
 is only needed if you want AWS Bedrock.
 
+<img src="../public/architecture.svg" alt="Circles system architecture" width="100%" />
+
+> Full-resolution, always up to date at [`/architecture.svg`](https://vnmoorthy.github.io/circles/architecture.svg).
+
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │  React UI (components/)                                       │
