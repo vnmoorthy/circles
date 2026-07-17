@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/lib/engine/loop.ts","./src/lib/engine/readiness.ts","./src/lib/engine/types.ts","./src/lib/providers/types.ts"],"version":"5.9.3"}
