@@ -28,10 +28,10 @@ export function scoreRound(obs: Observation): number {
   const tempPenalty = drift > 0 ? drift * 1.4 : Math.abs(drift) * 0.7
   const tempScore = clamp(100 - tempPenalty)
 
-  let score = 0.42 * obs.clarity + 0.4 * obs.empathy + 0.18 * tempScore
+  let score = 0.45 * obs.clarity + 0.38 * obs.empathy + 0.17 * tempScore
 
-  if (obs.escalated) score -= 22
-  if (obs.froze) score -= 26
+  if (obs.escalated) score -= 20
+  if (obs.froze) score -= 22
 
   return Math.round(clamp(score))
 }
@@ -46,10 +46,11 @@ export function updateReadiness(
   roundScore: number,
   roundsSoFar: number,
 ): number {
-  // Very first round: seed from the round score but stay conservative.
-  if (roundsSoFar <= 1) return Math.round(clamp(roundScore * 0.7))
-  const responsiveness = clamp(0.35 + roundsSoFar * 0.04, 0.35, 0.6) / 100
-  const alpha = responsiveness * 100
+  // First round: seed from the round score but stay a touch conservative.
+  if (roundsSoFar <= 1) return Math.round(clamp(roundScore * 0.8))
+  // Responsive EMA — recent performance dominates, so a handful of strong rounds
+  // in a row is genuinely rewarded and the loop can actually reach "ready".
+  const alpha = 0.5
   return Math.round(clamp(prev * (1 - alpha) + roundScore * alpha))
 }
 
@@ -63,8 +64,8 @@ export function nextDifficulty(prev: number, roundScore: number): number {
   if (roundScore >= 75) delta = 9 // doing well → raise the stakes
   else if (roundScore >= 55) delta = 3
   else if (roundScore >= 40) delta = -4
-  else delta = -11 // struggling → soften to keep them engaged
-  return Math.round(clamp(prev + delta, 10, 95))
+  else delta = -9 // struggling → soften to keep them engaged (but never a pushover)
+  return Math.round(clamp(prev + delta, 20, 95))
 }
 
 /** The loop decides on its own that the user is ready. */

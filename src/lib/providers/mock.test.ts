@@ -56,4 +56,21 @@ describe('mockProvider', () => {
     const a = await mockProvider.analyze(input('hello'))
     expect(a.coaching.headline).toBeTruthy()
   })
+
+  it('does not treat forward-looking "whatever" as freezing', async () => {
+    const a = await mockProvider.analyze(
+      input("I love you, and I'm ready for whatever comes next."),
+    )
+    expect(a.observation.froze).toBe(false)
+    expect(a.observation.clarity).toBeGreaterThan(60)
+  })
+
+  it('rewards warmth (love / grateful) with real empathy', async () => {
+    const warm = await mockProvider.analyze(
+      input("I'm grateful you heard me out. I love you and I'm not going anywhere."),
+    )
+    const flat = await mockProvider.analyze(input('I have decided. That is my choice.'))
+    expect(warm.observation.empathy).toBeGreaterThan(flat.observation.empathy)
+    expect(warm.observation.empathy).toBeGreaterThan(70)
+  })
 })
