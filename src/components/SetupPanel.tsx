@@ -41,13 +41,20 @@ export function SetupPanel({ onStart }: Props) {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Rehearse the conversation you're dreading.
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.05] px-3 py-1 text-[11px] text-white/50 ring-1 ring-white/[0.07]">
+          <span className="h-1.5 w-1.5 rounded-full bg-calm" /> runs on-device · no key needed
+        </span>
+        <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-[2.9rem] sm:leading-[1.05]">
+          Rehearse the conversation
+          <br className="hidden sm:block" /> you're{' '}
+          <span className="bg-gradient-to-r from-accent-soft to-warm bg-clip-text text-transparent">
+            dreading.
+          </span>
         </h1>
-        <p className="mx-auto mt-3 max-w-xl text-white/50">
+        <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white/50">
           An agent role-plays the other person, watches where you break, and coaches you —
-          looping until it decides you're ready. Nothing you type here leaves your browser
-          on the demo engine.
+          looping until it decides you're ready. Nothing you type leaves your browser on the
+          demo engine.
         </p>
       </motion.div>
 
@@ -62,19 +69,21 @@ export function SetupPanel({ onStart }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => onStart(s)}
-                className="group glass rounded-2xl p-4 text-left transition-all hover:border-accent/40 hover:bg-ink-800/70"
+                className="group glass rounded-2xl p-4 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[0_20px_40px_-24px_rgba(124,108,255,0.7)]"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-2xl">{s.emoji}</span>
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/[0.04] text-xl ring-1 ring-white/[0.06]">
+                    {s.emoji}
+                  </span>
                   {sensitivity === 'high' && (
-                    <span className="rounded-full bg-tense/15 px-2 py-0.5 text-[10px] text-tense">
+                    <span className="rounded-full bg-tense/15 px-2 py-0.5 text-[10px] font-medium text-tense ring-1 ring-tense/20">
                       sensitive
                     </span>
                   )}
                 </div>
-                <div className="mt-2 font-medium text-white">{s.title}</div>
+                <div className="mt-3 font-semibold text-white">{s.title}</div>
                 <div className="mt-1 line-clamp-2 text-sm text-white/45">{s.goal}</div>
-                <div className="mt-3 flex items-center gap-1 text-xs text-accent-soft opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="mt-3 flex items-center gap-1 text-xs font-medium text-accent-soft opacity-0 transition-opacity group-hover:opacity-100">
                   Start rehearsing <ArrowRight className="h-3 w-3" />
                 </div>
               </motion.button>
@@ -97,7 +106,7 @@ export function SetupPanel({ onStart }: Props) {
                 value={spec[f.key]}
                 onChange={(e) => setSpec({ ...spec, [f.key]: e.target.value })}
                 placeholder={f.placeholder}
-                className="w-full rounded-xl bg-white/[0.04] px-3.5 py-2.5 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-accent/50"
+                className="field"
               />
             </div>
           ))}
